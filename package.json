@@ -1,0 +1,48 @@
+{
+  "name": "drift-zone-fe-user",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 8000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier . --write --cache"
+  },
+  "dependencies": {
+    "@formatjs/intl-localematcher": "^0.4.2",
+    "accept-language": "^3.0.18",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "i18next": "^23.5.1",
+    "i18next-resources-to-backend": "^1.1.4",
+    "lucide-react": "^0.284.0",
+    "negotiator": "^0.6.3",
+    "next": "13.5.4",
+    "next-i18n-router": "^4.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.2.2",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/negotiator": "^0.6.1",
+    "@types/node": "^20.8.3",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.11",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "13.5.4",
+    "eslint-config-prettier": "^9.0.0",
+    "lint-staged": "^14.0.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "simple-git-hooks": "^2.9.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false"
+  }
+}
