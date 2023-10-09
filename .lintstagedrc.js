@@ -5,7 +5,7 @@ const buildEslintCommand = (filenames) =>
     .map((f) => path.relative(process.cwd(), f))
     .join(' --file ')}`
 
-const buildPrettierCommand = () => `prettier --write --cache --ignore-unknown`
+const buildPrettierCommand = () => `pnpm run format`
 
 module.exports = {
   '*.{js,jsx,ts,tsx}': [buildEslintCommand, buildPrettierCommand],
