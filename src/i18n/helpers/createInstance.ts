@@ -1,9 +1,9 @@
 import { createInstance } from 'i18next'
-import { initReactI18next } from 'react-i18next/initReactI18next'
 import resourcesToBackend from 'i18next-resources-to-backend'
-import i18nConfig from '@/i18n/settings'
+import { initReactI18next } from 'react-i18next/initReactI18next'
+import { i18nConfig } from '../settings'
 
-async function initTranslations(locale: string, namespaces: string[]) {
+export async function initTranslations(locale: string, namespaces: string[]) {
   const i18nInstance = createInstance()
 
   await i18nInstance
@@ -25,21 +25,4 @@ async function initTranslations(locale: string, namespaces: string[]) {
     })
 
   return i18nInstance
-}
-
-export async function useTranslation(
-  locale: string,
-  namespaces: string[],
-  options: { keyPrefix?: string } = {},
-) {
-  const i18nextInstance = await initTranslations(locale, namespaces)
-
-  return {
-    t: i18nextInstance.getFixedT(
-      locale,
-      Array.isArray(namespaces) ? namespaces[0] : namespaces,
-      options.keyPrefix,
-    ),
-    i18n: i18nextInstance,
-  }
 }

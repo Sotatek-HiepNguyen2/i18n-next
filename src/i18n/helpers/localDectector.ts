@@ -1,8 +1,7 @@
 import { NextRequest } from 'next/server'
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
-import { LocaleConfig } from './type'
-import i18nConfig from './settings'
+import { i18nConfig } from '../settings'
 
 /**
  * Dectect user's locale from request
